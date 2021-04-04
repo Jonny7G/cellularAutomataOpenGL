@@ -89,6 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Jonny\Documents\OpenGL projects\CellularAutomata\CellularAutomata\glfw-3.3.3.bin.WIN32\include;C:\Users\Jonny\Documents\OpenGL projects\CellularAutomata\CellularAutomata\includes</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,6 +108,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Jonny\Documents\OpenGL projects\CellularAutomata\CellularAutomata\glfw-3.3.3.bin.WIN32\include;C:\Users\Jonny\Documents\OpenGL projects\CellularAutomata\CellularAutomata\includes</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,6 +151,16 @@
   <ItemGroup>
     <ClCompile Include="CellularAutomata.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sprite.frag" />
+    <None Include="Sprite.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="SpriteRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
