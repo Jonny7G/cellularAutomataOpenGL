@@ -1,8 +1,9 @@
 #version 330 core
 out vec4 FragColor;
-uniform mat4 projection;
-uniform mat4 model;
+uniform vec4 color;
+
 void main()
 {
-   FragColor = vec4(1,1,1,0);
+   
+   FragColor = vec4(1,1,1,0)*color;
 };

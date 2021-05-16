@@ -11,9 +11,13 @@ private:
 	unsigned int VBO;
 	unsigned int VAO;
 	unsigned int EBO;
+	glm::vec4 color;
 public:
-	SpriteRenderer(Shader shdr) {
+	SpriteRenderer() {
 
+	}
+	SpriteRenderer(Shader shdr,glm::vec4 color) {
+		this->color = color;
 		this->shader = shdr;
 		//vertex data
 		float vertices[] = {
@@ -66,10 +70,12 @@ public:
 		
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(position, 0.0f));
+		
 		model = glm::scale(model, glm::vec3(size, 1.0f));
+		
 		this->shader.Use();
 		this->shader.SetMatrix4(model, "model");
-
+		this->shader.SetVec4(color, "color");
 		glBindVertexArray(this->VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);

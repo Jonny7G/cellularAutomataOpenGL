@@ -62,6 +62,9 @@ public:
 	void SetMatrix4(glm::mat4 mat,std::string name) {
 		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()),1,false, glm::value_ptr(mat)); //set mat4 in shader
 	}
+	void SetVec4(glm::vec4 vec, std::string name) {
+		glUniform4fv(glGetUniformLocation(program, name.c_str()), 1,glm::value_ptr(vec));
+	}
 	void Use() {
 		glUseProgram(program);
 	}
