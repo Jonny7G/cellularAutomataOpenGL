@@ -33,9 +33,7 @@ void Grid::SetTile(Cell::cellType type, glm::vec2 scrnPos)
 	getGridIndex(scrnPos, xIndex, yIndex);
 	Cell& cell = grid[xIndex - 1][yIndex - 1];
 	cell.type = type;
-	if (cell.isType(Cell::cellType::blank)) {
-		cell.waterLevel = 0;
-	}
+	cell.waterLevel = 0;
 }
 
 void Grid::Simulate()
@@ -99,6 +97,16 @@ void Grid::Simulate()
 			Cell& cell = grid[i][k];
 			cell.waterLevel += change[i][k];
 			change[i][k] = 0;
+		}
+	}
+}
+
+void Grid::Clear()
+{
+	for (int x = 0;x < gridWidth;x++) {
+		for (int y = 0;y < gridHeight;y++) {
+			Cell& cell = grid[x][y];
+			cell.waterLevel = 0;
 		}
 	}
 }

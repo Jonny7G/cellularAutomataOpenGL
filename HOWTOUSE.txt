@@ -1,0 +1,4 @@
+Left click to add water
+right click to add solid
+r to clear water
+adding water to a solid removes the solid

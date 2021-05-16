@@ -22,7 +22,7 @@ private:
 		{1,1,1,1,1,1,1,1},
 		{1,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,1},
-		{1,0,1,1,1,0,0,1},
+		{1,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,1},
 		{1,1,1,1,1,1,1,1}
 	};
@@ -66,6 +66,7 @@ public:
 	void AddWater(int waterLevel, glm::vec2 scrnPos);
 	void SetTile(Cell::cellType type, glm::vec2 scrnPos);
 	void Simulate();
+	void Clear();
 	~Grid() {
 		delete shader;
 	}

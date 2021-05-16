@@ -21,11 +21,18 @@ void UserInput(Grid *grid, GLFWwindow *window) {
 		grid->SetTile(Cell::cellType::blank, scrnPos);
 		grid->AddWater(1, scrnPos);
 	}
-
-	int key1 = glfwGetKey(window, GLFW_KEY_1);
+	int state2 = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);
+	if (state2 == GLFW_PRESS)
+	{
+		double xPos, yPos;
+		glfwGetCursorPos(window, &xPos, &yPos);
+		glm::vec2 scrnPos = glm::vec2(xPos, yPos);
+		grid->SetTile(Cell::cellType::solid, scrnPos);
+	}
+	int key1 = glfwGetKey(window, GLFW_KEY_R);
 	if (key1 == GLFW_PRESS)
 	{
-		std::cout << "break";
+		grid->Clear();
 	}
 }
 int main()
