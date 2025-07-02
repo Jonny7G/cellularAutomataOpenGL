@@ -1,1 +1,3 @@
 # cellularAutomataOpenGL
+
+Made for school
